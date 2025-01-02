@@ -176,4 +176,3 @@ void fun(int n) {
 In Visualgo, enter this code snippet (adapting it slightly if needed to fit their syntax) to see how `fun(n - 1)` and `fun(n - 2)` are recursively called, forming a tree structure where each call has two branches until `n` reaches 0. This visualization can help clarify the exponential growth in function calls with Tree Recursion.
 
 ---
-
