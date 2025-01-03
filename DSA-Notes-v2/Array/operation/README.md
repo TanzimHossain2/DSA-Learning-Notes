@@ -1,10 +1,32 @@
-# Array Operations
+# Array Operations in C++
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Structure of the Array](#structure-of-the-array)
+3. [Operations](#operations)
+   - [Get an Element](#get-an-element)
+   - [Set an Element](#set-an-element)
+   - [Find the Maximum Element](#find-the-maximum-element)
+   - [Find the Minimum Element](#find-the-minimum-element)
+   - [Calculate the Sum of Elements](#calculate-the-sum-of-elements)
+   - [Calculate the Average of Elements](#calculate-the-average-of-elements)
+   - [Display the Elements](#display-the-elements)
+   - [Free the Array Memory](#free-the-array-memory)
+4. [Example Usage](#example-usage)
+5. [Time Complexity Summary](#time-complexity-summary)
+
+---
 
 ## Introduction
-This note provides an overview of several essential array operations implemented in C++ using a custom `Array` structure. These operations include retrieving, modifying, and analyzing array elements. Each operation is explained with its purpose, functionality, and time complexity.
+
+This note provides an overview of common array operations in C++ using a custom `Array` structure. The operations demonstrated include retrieving, modifying, and analyzing elements of an array. Each operation is explained in detail with the relevant pseudocode and time complexity.
+
+---
 
 ## Structure of the Array
-The `Array` structure is defined as:
+
+The `Array` structure defines an array with dynamic memory allocation:
 
 ```cpp
 typedef struct {
@@ -15,26 +37,28 @@ typedef struct {
 ```
 
 ### Key Components:
+
 - `A`: Pointer to the array elements stored dynamically.
 - `size`: Maximum capacity of the array.
 - `length`: Current number of elements in the array.
 
+---
+
 ## Operations
 
 ### 1. Get an Element
+
 **Description:** Retrieves the element at a specific index.
 
-**Algorithm:**
-1. Check if the index is valid (0 <= index < length).
-2. If valid, return the element at the given index.
-3. Otherwise, return -1.
-
 **Pseudocode:**
-```plaintext
-Get(Array, index):
-  if index >= 0 and index < Array.length:
-    return Array.A[index]
-  return -1
+
+```
+FUNCTION Get(Array, index)
+    IF index >= 0 AND index < Array.length THEN
+        RETURN Array.A[index]
+    ELSE
+        RETURN -1
+END FUNCTION
 ```
 
 **Time Complexity:** O(1)
@@ -42,17 +66,16 @@ Get(Array, index):
 ---
 
 ### 2. Set an Element
+
 **Description:** Updates the element at a specific index with a new value.
 
-**Algorithm:**
-1. Check if the index is valid (0 <= index < length).
-2. If valid, set the element at the given index to the new value.
-
 **Pseudocode:**
-```plaintext
-Set(Array, index, value):
-  if index >= 0 and index < Array.length:
-    Array.A[index] = value
+
+```
+FUNCTION Set(Array, index, value)
+    IF index >= 0 AND index < Array.length THEN
+        Array.A[index] = value
+END FUNCTION
 ```
 
 **Time Complexity:** O(1)
@@ -60,21 +83,20 @@ Set(Array, index, value):
 ---
 
 ### 3. Find the Maximum Element
+
 **Description:** Finds the maximum element in the array.
 
-**Algorithm:**
-1. Initialize `max` with the first element of the array.
-2. Traverse the array and update `max` if a larger element is found.
-3. Return `max` after traversing the entire array.
-
 **Pseudocode:**
-```plaintext
-Max(Array):
-  max = Array.A[0]
-  for i from 1 to Array.length - 1:
-    if Array.A[i] > max:
-      max = Array.A[i]
-  return max
+
+```
+FUNCTION Max(Array)
+    max = Array.A[0]
+    FOR i FROM 1 TO Array.length - 1
+        IF Array.A[i] > max THEN
+            max = Array.A[i]
+    END FOR
+    RETURN max
+END FUNCTION
 ```
 
 **Time Complexity:** O(n)
@@ -82,21 +104,20 @@ Max(Array):
 ---
 
 ### 4. Find the Minimum Element
+
 **Description:** Finds the minimum element in the array.
 
-**Algorithm:**
-1. Initialize `min` with the first element of the array.
-2. Traverse the array and update `min` if a smaller element is found.
-3. Return `min` after traversing the entire array.
-
 **Pseudocode:**
-```plaintext
-Min(Array):
-  min = Array.A[0]
-  for i from 1 to Array.length - 1:
-    if Array.A[i] < min:
-      min = Array.A[i]
-  return min
+
+```
+FUNCTION Min(Array)
+    min = Array.A[0]
+    FOR i FROM 1 TO Array.length - 1
+        IF Array.A[i] < min THEN
+            min = Array.A[i]
+    END FOR
+    RETURN min
+END FUNCTION
 ```
 
 **Time Complexity:** O(n)
@@ -104,20 +125,19 @@ Min(Array):
 ---
 
 ### 5. Calculate the Sum of Elements
+
 **Description:** Computes the sum of all elements in the array.
 
-**Algorithm:**
-1. Initialize `sum` to 0.
-2. Traverse the array and add each element to `sum`.
-3. Return `sum` after traversing the entire array.
-
 **Pseudocode:**
-```plaintext
-Sum(Array):
-  sum = 0
-  for i from 0 to Array.length - 1:
-    sum += Array.A[i]
-  return sum
+
+```
+FUNCTION Sum(Array)
+    sum = 0
+    FOR i FROM 0 TO Array.length - 1
+        sum = sum + Array.A[i]
+    END FOR
+    RETURN sum
+END FUNCTION
 ```
 
 **Time Complexity:** O(n)
@@ -125,16 +145,16 @@ Sum(Array):
 ---
 
 ### 6. Calculate the Average of Elements
+
 **Description:** Computes the average of all elements in the array.
 
-**Algorithm:**
-1. Calculate the sum of all elements using the `Sum` function.
-2. Divide the sum by the number of elements (`length`).
-
 **Pseudocode:**
-```plaintext
-Avg(Array):
-  return Sum(Array) / Array.length
+
+```
+FUNCTION Avg(Array)
+    sum = Sum(Array)
+    RETURN sum / Array.length
+END FUNCTION
 ```
 
 **Time Complexity:** O(n)
@@ -142,16 +162,17 @@ Avg(Array):
 ---
 
 ### 7. Display the Elements
+
 **Description:** Prints all the elements in the array.
 
-**Algorithm:**
-1. Traverse the array and print each element.
-
 **Pseudocode:**
-```plaintext
-Display(Array):
-  for i from 0 to Array.length - 1:
-    print(Array.A[i])
+
+```
+FUNCTION Display(Array)
+    FOR i FROM 0 TO Array.length - 1
+        PRINT Array.A[i]
+    END FOR
+END FUNCTION
 ```
 
 **Time Complexity:** O(n)
@@ -159,20 +180,18 @@ Display(Array):
 ---
 
 ### 8. Free the Array Memory
+
 **Description:** Deallocates the dynamically allocated memory for the array.
 
-**Algorithm:**
-1. Delete the array pointer.
-2. Set the pointer to `nullptr`.
-3. Reset `size` and `length` to 0.
-
 **Pseudocode:**
-```plaintext
-FreeArray(Array):
-  delete Array.A
-  Array.A = nullptr
-  Array.size = 0
-  Array.length = 0
+
+```
+FUNCTION FreeArray(Array)
+    DELETE Array.A
+    Array.A = NULL
+    Array.size = 0
+    Array.length = 0
+END FUNCTION
 ```
 
 **Time Complexity:** O(1)
@@ -180,6 +199,7 @@ FreeArray(Array):
 ---
 
 ## Example Usage
+
 ```cpp
 // Initialize the array
 Array arr;
@@ -199,3 +219,19 @@ FreeArray(&arr);
 ```
 
 ---
+
+## Time Complexity Summary
+
+| Operation                         | Time Complexity |
+| --------------------------------- | --------------- |
+| Get an Element                    | O(1)            |
+| Set an Element                    | O(1)            |
+| Find the Maximum Element          | O(n)            |
+| Find the Minimum Element          | O(n)            |
+| Calculate the Sum of Elements     | O(n)            |
+| Calculate the Average of Elements | O(n)            |
+| Display the Elements              | O(n)            |
+| Free the Array Memory             | O(1)            |
+
+---
+
