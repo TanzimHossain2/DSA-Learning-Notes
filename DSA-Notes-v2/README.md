@@ -8,3 +8,4 @@ This is v2 of the notes for the Data Structures and Algorithms course. The notes
 
 1. [Recursion](Recursion/README.md)
 2. [Array](Array/README.md)
+3. [String](String/README.md)

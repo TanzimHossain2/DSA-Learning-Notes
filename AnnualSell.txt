@@ -1,0 +1,11 @@
+
+
+Item UnitCost UnitSellingPrice TotalUnitSold
+Pen   8         10                500
+Paper 8.5       10                450
+File  50        55                100
+JavaBook 250    -260              75
+Mouse 300       298               65
+Ruler 5.5       6                 600
+Pencil 7        7.5               45
+

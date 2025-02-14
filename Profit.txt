@@ -1,0 +1,12 @@
+Item          Profit
+---------------------
+Pen           1000.00
+Paper         675.00
+File          500.00
+JavaBook      Error: Invalid price for item: JavaBook
+Mouse         -130.00
+Ruler         300.00
+Pencil        22.50
+---------------------
+Total Profit:  2367.50
+Max Profit Item: Pen
